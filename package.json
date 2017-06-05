@@ -1,0 +1,24 @@
+{
+  "name": "blog-tdd",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "NODE_ENV=test mocha",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "chai": "^4.0.1",
+    "chai-http": "^3.0.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "mocha": "^3.4.2",
+    "mongodb": "^2.2.28",
+    "mongoose": "^4.10.4",
+    "morgan": "~1.8.1",
+    "nodemon": "^1.11.0",
+    "serve-favicon": "~2.4.2"
+  }
+}
