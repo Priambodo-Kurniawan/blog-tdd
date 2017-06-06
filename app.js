@@ -24,6 +24,7 @@ mongoose.connect(db_config[current_env], (err,res) => {
 
 var index = require('./routes/index');
 var articles = require('./routes/articles');
+var users = require('./routes/users');
 
 
 // view engine setup
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/api/articles', articles);
+app.use('/api/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
