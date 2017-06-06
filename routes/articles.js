@@ -11,6 +11,14 @@ router.get('/', function(req, res) {
   .catch((err)=>{res.send(err)})
 });
 
+router.get('/:id', function(req, res) {
+  Article.findById(req.params.id)
+  .then((article)=>{
+    res.send(article)
+  })
+  .catch((err)=>{res.send(err)})
+});
+
 router.post('/', function(req, res) {
   Article.create({})
   .then(()=>{
@@ -27,5 +35,18 @@ router.delete('/:id', function(req, res) {
   })
   .catch((err)=>{res.send(err)})
 });
+
+router.put('/:id', function(req, res){
+  let id = req.params.id
+  Article.update({_id: id}, req.body)
+  .then(() => {
+    Article.findById(id)
+    .then((article)=>{
+      res.send(article)
+    })
+    .catch((err)=>{res.send(err)})
+  })
+  .catch((err)=>{res.send(err)})
+})
 
 module.exports = router;
