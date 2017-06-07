@@ -18,7 +18,7 @@ methods.getByID = (req, res) => {
 }
 
 methods.create = (req, res) => {
-  Article.create({})
+  Article.create(req.body)
   .then(()=>{
     res.send('Article added')
   })
